@@ -3,6 +3,7 @@ layout: post
 title: "Keep It Simple, Stupid"
 date: 2022-05-15
 categories: [ctf,machine]
+image: /assets/img/Keep_it_Simple_Stupid_CYSEC/profile.png
 ---
 ## CYSEC CTF - Keep It Simple, Stupid
 CYSEC CTF was organized by <a href="https://twitter.com/CYSECNG" target="_blank" rel="noopener">CYSECNG</a> .This CTF was good thanks to organizers.
