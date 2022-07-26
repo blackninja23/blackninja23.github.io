@@ -1,3 +1,11 @@
+---
+layout: post
+title: "0x41haz"
+date: 2022-07-20
+categories: [THM, reverse-THM]
+image: /assets/img/0x41haz/0x41hazdp.png
+---
+
 ## **0x41haz Tryhackme**
 From description given in challenge <a href='https://tryhackme.com/room/0x41haz'>0x41haz</a>
 
