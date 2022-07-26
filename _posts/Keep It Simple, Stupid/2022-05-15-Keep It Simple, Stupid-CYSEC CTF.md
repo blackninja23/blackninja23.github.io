@@ -8,7 +8,6 @@ image: /assets/img/Keep_it_Simple_Stupid_CYSEC/profile.png
 ## CYSEC CTF - Keep It Simple, Stupid
 CYSEC CTF was organized by <a href="https://twitter.com/CYSECNG" target="_blank" rel="noopener">CYSECNG</a> .This CTF was good thanks to organizers.
 Username <a href="https://twitter.com/blackninja233" target="_blank" rel="noopener">blackninja23</a> from my team <a href="https://twitter.com/UdomCyberClub" target="_blank" rel="noopener">UdomCyberClub</a>. I was first blood to root this good machine from this ctf.
-
 <!-- <img src='/assets/img/Keep_it_Simple_Stupid_CYSEC/profile.png' alt='profile'> -->
 
 According to this challenge, we are need to add cysec.local to /etc/hosts
