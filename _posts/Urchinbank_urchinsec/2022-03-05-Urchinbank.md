@@ -3,6 +3,7 @@ layout: post
 title: "Urchinbank"
 date: 2022-03-05
 categories: [ctf,machine-hard]
+image: /assets/img/log2_urchinsec.png
 ---
 ## Urchinbank Machine Writeup 
 UrchinSec CTF MMXXII was organized by <a href="https://twitter.com/urchinsec_" target="_blank" rel="noopener">urchinsec</a> under <a href="https://twitter.com/tahaafarooq" target="_blank" rel="noopener">tahaafarooq</a>,<a href="https://twitter.com/trustie_rity" target="_blank" rel="noopener">trustie_rity</a>,<a href="https://twitter.com/nicl4ssic" target="_blank" rel="noopener">nicl4ssic</a>,<a href="https://twitter.com/0xlilith666" target="_blank" rel="noopener">0xlilith666c</a>,<a href="https://twitter.com/tzanonima" target="_blank" rel="noopener">tzanonima</a>
