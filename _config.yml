@@ -9,7 +9,7 @@
 
 title: blog @blackninja23 # the main title
 
-tagline: CTF Player | DFIR | Blue Teamer # it will display as the sub-title
+tagline: Pentester | Red Teamer | CTF Player # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   knowledge is power
@@ -74,7 +74,7 @@ plugins:
 #
 #     dark   - Use the dark color scheme
 #
-theme_mode: dual
+theme_mode: dark
 
 # boolean type, global switch for ToC in posts.
 toc: true
