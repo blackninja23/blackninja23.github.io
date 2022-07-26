@@ -22,9 +22,9 @@ Well I <a href="https://twitter.com/blackninja233" target="_blank" rel="noopener
 
 Two flags were needed, one for user and other one for root
 
-<img src='/assets/img/log_urchinsec.png' alt='user'>
+<!-- <img src='/assets/img/log_urchinsec.png' alt='user'>
 
-<img src='/assets/img/log2_urchinsec.png' alt='root'>
+<img src='/assets/img/log2_urchinsec.png' alt='root'> -->
 
 
 # Enumeration
