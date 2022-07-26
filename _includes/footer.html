@@ -1,0 +1,41 @@
+<!--
+  The Footer
+  v2.0
+  https://github.com/cotes2020/jekyll-theme-chirpy
+  © 2017-2019 Cotes Chung
+  MIT License
+-->
+
+<footer class="d-flex w-100 justify-content-center">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="footer-left">
+      <p class="mb-0">
+        © {{ 'now' | date: "%Y" }}
+        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
+        {% if site.data.rights.brief %}
+        <span data-toggle="tooltip" data-placement="top"
+          title="{{ site.data.rights.verbose }}">{{ site.data.rights.brief }}</span>
+        <script src="https://tryhackme.com/badge/180576"></script>
+        {% endif %}
+      </p>
+    </div>
+    <div class="footer-center">
+      <p class="mb-0">
+        © {{ 'now' | date: "%Y" }}
+        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
+        {% if site.data.rights.brief %}
+        <span data-toggle="tooltip" data-placement="top"
+          title="{{ site.data.rights.verbose }}">{{ site.data.rights.brief }}</span>
+        <script src="https://www.hackthebox.com/badge/369503"></script>
+        {% endif %}
+      </p>
+    </div>
+
+    <div class="footer-right">
+     <p class="mb-0">
+      <h4>knowledge is power</h4>
+      </p>
+    </div>
+
+  </div> <!-- div.d-flex -->
+</footer>
