@@ -1,4 +1,3 @@
-## Hackthebox - Hancliffe
 ---
 layout: post
 title: "Hancliffe"
@@ -6,6 +5,7 @@ date: 2022-03-07
 categories: [HTB, machine-hard-htb]
 image: /assets/img/Hancliffe-logo-HTB.png
 ---
+## Hackthebox - Hancliffe
 <!-- <img src='/assets/img/Hancliffe-logo-HTB.png' alt='Hancliffe logo'> -->
 # Enumeration
 Starting off with a nmap scan:
