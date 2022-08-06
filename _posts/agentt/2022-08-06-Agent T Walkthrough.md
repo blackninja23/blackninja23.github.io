@@ -34,7 +34,10 @@ Service detection performed. Please report any incorrect results at https://nmap
 ```
 We have port 80 open
 ## port 80 enumeration
-Go to port 80, found that version of php(PHP 8.1.0-dev) is vulnerable to remote code execution.You can use offline researching with tool called searchsploit or online researching
+Go to port 80,
+With wappalyzer extension on our browser or inspector tool of browser, I found that version of php(PHP 8.1.0-dev) in which it is vulnerable to remote code execution.
+
+You can use offline researching with tool called searchsploit or online researching
 ```
 ➜  agentt searchsploit 8.1.0-dev 
 --------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
@@ -46,7 +49,7 @@ Shellcodes: No Results
 
 ```
 Online researching,
-We got link like -> https://www.exploit-db.com/exploits/49933
+We got link like -> <a href='https://www.exploit-db.com/exploits/49933'>PHP 8.1.0-dev exploit </a>
 Using exploit above and it works for us
 ```
 ➜  agentt python3 exploit.py                                                                                                                                             
