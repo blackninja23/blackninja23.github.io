@@ -37,6 +37,7 @@ We have port 80 open
 Go to port 80,
 With wappalyzer extension on our browser or inspector tool of browser, I found that version of php(PHP 8.1.0-dev) in which it is vulnerable to remote code execution.
 
+
 You can use offline researching with tool called searchsploit or online researching
 ```
 ➜  agentt searchsploit 8.1.0-dev 
