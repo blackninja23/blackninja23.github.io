@@ -67,7 +67,6 @@ We can do this into 2 ways
 ## Do manually uploading and execute
 Navigate to http://YourIp:8080/manager/html and we can see a place of uploading war file
 
-![](waruploaded.png)
 <img src='/assets/img/Thompson-THM/waruploaded.png' alt=''>
 
 I will use msfvenom to create war file and upload it.After uploading, i will execute it and get a shell
@@ -90,7 +89,6 @@ Navigate to http://YourIp:8080/manager/html and go to section of `WAR file to de
 
 After upload it, you will see it in paths with name of that war in Applications.For mine, it was shell.war so name ot be seen ,it will be shell
 
-![](uploadedshell.png)
 
 <img src='/assets/img/Thompson-THM/uploadedshell.png' alt=''>
 
