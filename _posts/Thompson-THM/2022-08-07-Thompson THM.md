@@ -254,7 +254,7 @@ cat root.txt
 [REDACTED]
 
 ```
-We are done
+We are done.
 Greet from <a href="https://twitter.com/blackninja233" target="_blank" rel="noopener">blackninja23</a> 
 
 
