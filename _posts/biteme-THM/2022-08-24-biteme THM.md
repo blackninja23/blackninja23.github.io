@@ -139,9 +139,9 @@ return true;
 
 }
 ```
-*Let do dynamic analysis first 
+*Let do dynamic analysis first* 
 
-Using burpsuite..*
+*Using burpsuite..*
 ```
 POST /console/index.php HTTP/1.1
 Host: 10.10.28.228
