@@ -326,7 +326,7 @@ hydra -l jason_test_account -P pin.txt 10.10.109.19 http-post-form "/console/mfa
 
 *as you can see that we can browse and view file on server*
 
-## USER PRIVILEDGE
+# USER PRIVILEDGE
 *Check /home*
 
 <img src="/assets/img/bitemeTHM/home.png" alt="">
@@ -411,7 +411,7 @@ drwxr-xr-x 2 jason jason 4096 Sep 24  2021 .ssh
 <img src="/assets/img/bitemeTHM/typing-laptop.gif" alt="">
 
 
-## ROOT PRIVILEDGE
+# ROOT PRIVILEDGE
 *I will give short brief but you can try tool like linpeas*
 
 **check groups**
