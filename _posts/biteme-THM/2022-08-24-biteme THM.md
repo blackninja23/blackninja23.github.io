@@ -76,7 +76,7 @@ index.html              [Status: 200, Size: 10918, Words: 3499, Lines: 376, Dura
 
 *Under /console and view source code we see the web application run a project called securimage that work with captcha but luckily it is an open source accessable through <a href="https://github.com/dapphp/securimage">github securimage</a>. this one we reduce too much bruteforce 😊
 
-Where can it be accessed?? from our site
+Where can it be accessed?? from our site.
 Testing around our site, we can see it accessable through /console/securimage/
 
 Let look where we can find version of securimage by accessable through github
