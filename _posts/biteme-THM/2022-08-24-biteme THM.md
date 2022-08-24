@@ -168,18 +168,18 @@ Let use the power of debugger in console by setting breakpoint at line 11.
 
 *navigate to debugger and put a mark in line (11th line)*
 
-<img src="/assets/img/bitemeTHM/console.png" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/console.png" alt="">
 
 *fill the form then you will see that it has stop on breakpoint*
 
-<img src="/assets/img/bitemeTHM/pause.png" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/pause.png" alt="">
 
 *Check console and nothing shown
 
 *Move one step (F10) and return to console
 we see something interesting*
 
-<img src="/assets/img/bitemeTHM/consolee.png" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/consolee.png" alt="">
 
 *Google around about  <a href="https://php-legacy-docs.zend.com/manual/php5/en/function.highlight-file">php file syntaxt highlighting</a>
 i found that we need to add s to any file with extension of php
@@ -187,7 +187,7 @@ i reset the box as it was very slowly
 Navigate to link <a href="http://10.10.109.19/console/index.phps">http://10.10.109.19/console/index.phps</a>
 we got the source code*
 
-<img src="/assets/img/bitemeTHM/code.png" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/code.png" alt="">
 
 *In code, we see 3 different php files,
 - `functions.php`
@@ -277,7 +277,7 @@ jason_test_account:violet
 ```
 *we succefully login but we need mfa code*
 
-<img src="/assets/img/bitemeTHM/mfa.png" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/mfa.png" alt="">
 
 *so let check mfa.phps, we got not found and that was bad luck. let move on*
 
@@ -310,33 +310,33 @@ hydra -l jason_test_account -P pin.txt 10.10.109.19 http-post-form "/console/mfa
 ```
 *we found pin*
 
-<img src="/assets/img/bitemeTHM/pin.png" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/pin.png" alt="">
 
 *and we can got to dashboard*
 
-<img src="/assets/img/bitemeTHM/web.png" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/web.png" alt="">
 
 *as you can see that we can browse and view file on server*
 
 ## USER PRIVILEDGE
 *Check /home*
 
-<img src="/assets/img/bitemeTHM/home.png" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/home.png" alt="">
 
 *we can see user fred and user jason.
 Checking to fred and nothing interesting.*
 
 *Checking jason,* 
 
-<img src="/assets/img/bitemeTHM/jason.png" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/jason.png" alt="">
 
 *Checking .ssh*
 
-<img src="/assets/img/bitemeTHM/ssh.png" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/ssh.png" alt="">
 
 *we can read id_rsa*
 
-<img src="/assets/img/bitemeTHM/idrsa.png" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/idrsa.png" alt="">
 
 *save the file and try to login*
 ```
@@ -398,7 +398,7 @@ drwxr-xr-x 2 jason jason 4096 Sep 24  2021 .ssh
 
 ```
 
-<img src="/assets/img/bitemeTHM/typing-laptop.gif" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/typing-laptop.gif" alt="">
 
 
 ## ROOT PRIVILEDGE
