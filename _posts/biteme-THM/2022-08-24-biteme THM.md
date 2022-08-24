@@ -1,3 +1,11 @@
+---
+layout: post
+title: "biteme"
+date: 2022-08-24
+categories: [THM, machine-medium]
+image: /assets/img/bitemeTHM/biteme.png
+---
+
 # biteme tryhackme
 # Enumeration
 **port scan** 
