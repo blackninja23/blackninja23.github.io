@@ -574,6 +574,8 @@ bash-4.4#
 ```
 We are root
 
+You can also dwonload pdf of writeup from <a href="https://github.com/blackninja23/blackninja23.github.io/raw/main/assets/img/bitemeTHM/walkthrough.pdf">download here</a>
+
 Greeting from <a href="https://twitter.com/blackninja233">blackninja23</a>
 
 <img src="/assets/img/bitemeTHM/throw.gif" alt="">
