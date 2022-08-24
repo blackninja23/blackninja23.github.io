@@ -292,7 +292,7 @@ you will see another message left for us.*
 ```
 @fred we need to put some brute force protection on here, remind me in the morning... jason
 ```
-*he say that he put bruteforce and i dont see some csrf token so let bruteforce*
+*he say that he put bruteforce protection and i dont see some csrf token so let bruteforce*
 
 **generate 4 numbers**
 ```
