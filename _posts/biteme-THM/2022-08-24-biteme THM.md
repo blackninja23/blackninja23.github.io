@@ -185,6 +185,7 @@ we see something interesting*
 i found that we need to add s to any file with extension of php
 i reset the box as it was very slowly
 Navigate to link <a href="http://10.10.109.19/console/index.phps">http://10.10.109.19/console/index.phps</a>
+
 we got the source code*
 
 <img src="/assets/img/bitemeTHM/code.png" alt="">
@@ -232,6 +233,7 @@ php >
 **Understanding is_valid_pwd**
 
  *our parameter got hashed to md5 and return with substr.*
+ 
  *Understand what substr is doing, we can use php interactive shell*
  ```
  └─$ php -a                                                                                                                                                                                                                              255 ⨯
@@ -247,6 +249,7 @@ ghi
 `function is_valid_pwd($pwd) {    $hash = md5($pwd);          return substr($hash, -3) === '001';   }`
 ```
 *in our code, it is return true when last 3 words are equal to 001
+
 Let go and write some python script and use rockyou*
 ```
 #!/usr/bin/env python3
@@ -379,7 +382,9 @@ Session completed.
 
 ```
 *we have a passphrase which it is 1a2b3c4d.
+
 Try to login again.
+
 Finally we login and we have user.txt.*
 
 ```
