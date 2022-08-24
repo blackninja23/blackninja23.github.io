@@ -140,6 +140,7 @@ return true;
 }
 ```
 *Let do dynamic analysis first 
+
 Using burpsuite..*
 ```
 POST /console/index.php HTTP/1.1
