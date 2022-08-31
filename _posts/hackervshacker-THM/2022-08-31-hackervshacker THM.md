@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "biteme"
-date: 2022-08-24
-categories: [THM, machine-medium]
-image: /assets/img/hackervshackerTHM/hackervshacker.png "hackervshacker.png")
+title: "Hackervshacker Tryhackme Walkthrough"
+date: 2022-08-31
+categories: [THM, machine-easy]
+image: /assets/img/hackervshackerTHM/hackervshacker.png
 ---
 # hacker vs hacker walkthrough
 # Enumeration
