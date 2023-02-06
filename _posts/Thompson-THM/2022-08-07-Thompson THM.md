@@ -2,7 +2,7 @@
 layout: post
 title: "Thompson THM"
 date: 2022-08-07
-categories: [THM, machine-easy]
+categories: [THM, machine-easy-thm]
 image: /assets/img/Thompson-THM/Thompson.png
 ---
 ## Thompson Walkthrough
