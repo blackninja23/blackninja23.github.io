@@ -2,7 +2,7 @@
 layout: post
 title: "Keep It Simple, Stupid"
 date: 2022-05-15
-categories: [ctf,machine]
+categories: [ctf,machine-hard-ctf]
 image: /assets/img/Keep_it_Simple_Stupid_CYSEC/profile.png
 ---
 ## CYSEC CTF - Keep It Simple, Stupid
