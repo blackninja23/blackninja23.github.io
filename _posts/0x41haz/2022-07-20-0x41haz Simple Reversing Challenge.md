@@ -2,7 +2,7 @@
 layout: post
 title: "0x41haz"
 date: 2022-07-20
-categories: [THM, reverse-THM]
+categories: [THM, reverse-thm]
 image: /assets/img/0x41haz/0x41hazdp.png
 ---
 
