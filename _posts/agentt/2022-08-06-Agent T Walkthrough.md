@@ -2,7 +2,7 @@
 layout: post
 title: "Agent T"
 date: 2022-08-06
-categories: [THM, machine-THM,machine-easy]
+categories: [THM, machine-easy-thm]
 image: /assets/img/agentt/agentt.png
 ---
 
