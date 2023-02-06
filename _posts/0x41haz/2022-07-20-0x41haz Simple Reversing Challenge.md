@@ -42,6 +42,7 @@ From description given in challenge <a href='https://tryhackme.com/room/0x41haz'
     <img src='/assets/img/0x41haz/changed.png' alt=''>
 
 - And the header was changed
+
   ```file
   └─$ file 0x41haz.0x41haz 
   0x41haz.0x41haz: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2,
