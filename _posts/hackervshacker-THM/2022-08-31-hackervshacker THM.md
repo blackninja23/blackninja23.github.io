@@ -2,7 +2,7 @@
 layout: post
 title: "Hackervshacker Tryhackme Walkthrough"
 date: 2022-08-31
-categories: [THM, machine-easy]
+categories: [THM, machine-easy-thm]
 image: /assets/img/hackervshackerTHM/hackervshacker.png
 ---
 # hacker vs hacker walkthrough
