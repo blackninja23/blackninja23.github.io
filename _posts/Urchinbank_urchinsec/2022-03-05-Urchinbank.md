@@ -2,7 +2,7 @@
 layout: post
 title: "Urchinbank"
 date: 2022-03-05
-categories: [ctf,machine-hard]
+categories: [ctf,machine-hard-ctf]
 image: /assets/img/log2_urchinsec.png
 ---
 ## Urchinbank Machine Writeup 
