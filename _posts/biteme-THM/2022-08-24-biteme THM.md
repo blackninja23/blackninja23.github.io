@@ -2,7 +2,7 @@
 layout: post
 title: "biteme"
 date: 2022-08-24
-categories: [THM, machine-medium]
+categories: [THM, machine-medium-thm]
 image: /assets/img/bitemeTHM/biteme.png
 ---
 
