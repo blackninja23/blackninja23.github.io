@@ -124,7 +124,13 @@ SMB         10.10.10.100    445    DC               Replication     READ
 SMB         10.10.10.100    445    DC               SYSVOL                          Logon server share 
 SMB         10.10.10.100    445    DC               Users 
 ```
+- From above, you can see that folder called Replication in which it is only share that i can read
 - what does Replication mean in Active directory?=> it mean like backup data for other domain controller in which SYSVOL is backed up about machine and user settings
+- let dump that shares and start to look into it
+
+```
+smbclient \\\\10.10.10.100\\Replication -U ''%'' -c 'prompt;recurse;mget *'
+```
 - Navigate more and read files
 - i found some kind of credential
 
