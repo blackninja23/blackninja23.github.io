@@ -3,7 +3,7 @@ layout: post
 title: "Active"
 date: 2021-07-19
 categories: [HTB, machine-easy-htb]
-tags: [nmap, rustscan, crackmapexec, smbclient, GPP-Group-XML-Leaking-cpassword(MS14-025)(CVE-2014-1812), bloodhound-python, bloodhound, impacket-GetUserSPNs, hashcat, hashcat-13100, impacket-psexec, oscp]
+tags: [nmap, rustscan, crackmapexec, smbclient, GPP-Group-XML-Leaking-cpassword(MS14-025)(CVE-2014-1812), bloodhound-python, bloodhound, impacket-GetUserSPNs(Kerberoasting), Kerberoasting, hashcat, hashcat-13100, impacket-psexec, oscp]
 image: /assets/img/HTB/easy/Active/Active.png
 ---
 - Starting by scanning for ports
