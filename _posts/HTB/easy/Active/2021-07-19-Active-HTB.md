@@ -7,6 +7,7 @@ tags: [nmap, rustscan, crackmapexec, smbclient, GPP-Group-XML-Leaking-cpassword(
 image: /assets/img/HTB/easy/Active/Active.png
 ---
 > Active hackthebox is windows box, it involves CVE exploit of CVE-2014-1812(MS14-025) in which it involve dumping password via smb that was introducing via GPP(Group policies preferences) and with credentials obtained, you can perform kerberoasting  and discovered SPN of active/CIFS:445 used by Administrator.After performing kerberoasting,you can have Administrator's ntmlv2 hash and with it, you can crack it offline with hashcat and obtained credentials of Administrator
+
 # Enumeration
 - Starting by scanning for ports
 
