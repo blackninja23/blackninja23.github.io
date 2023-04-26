@@ -190,6 +190,7 @@ bloodhound-python -d active.htb -u svc_tgs -p 'GPPstillStandingStrong2k18' -gc D
 - you can start by make svc_tgs as owned
 - You can go through bloodhound and i will make it short
 - In analysis page, list all kerberoas users , i can see that Administrator is also in there
+
 ![](/assets/img/HTB/easy/Active/kerberoast.png)
 - let start by doing kerberoas attack
 
