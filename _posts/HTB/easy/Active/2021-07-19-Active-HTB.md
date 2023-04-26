@@ -7,6 +7,7 @@ tags: [nmap, rustscan, crackmapexec, smbclient, GPP-Group-XML-Leaking-cpassword(
 image: /assets/img/HTB/easy/Active/Active.png
 ---
 - Starting by scanning for ports
+
 ```
 mkdir -p nmaps && rustscan -a $IP --ulimit 5000 -- -vvv -Pn -sC -sV -oN nmaps/nmap_rustscansimple.txt
 ```
