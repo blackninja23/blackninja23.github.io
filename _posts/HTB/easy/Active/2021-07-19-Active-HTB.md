@@ -61,6 +61,7 @@ Host script results:
 
 # SMB ENUMERATION
 - Let start by know netbios name of this windows and as seen from nmap, it is domain controller
+
 ```
  crackmapexec smb $IP
 ```
@@ -75,6 +76,7 @@ SMB         10.10.10.100    445    DC               [*] Windows 6.1 Build 7601 x
 - From above, i know that netbios name is DC and domain is active.htb
 - since this is domain, let enumerate domain and if it fail then i will check for CVEs based on this service or other services
 - let check for anonymous
+
 ```
 smbclient -L $IP
 ```
@@ -98,6 +100,7 @@ do_connect: Connection to 10.10.10.100 failed (Error NT_STATUS_RESOURCE_NAME_NOT
 Unable to connect with SMB1 -- no workgroup available
 ```
 - As soon i see that anonymous is enable then i will use crackmapexec to see permission
+
 ```
 crackmapexec smb $IP -u '' -p '' --shares
 ```
@@ -138,6 +141,7 @@ SMB         10.10.10.100    445    DC               Users
 - dig more online and found that group policy preferences
 - Group Policy Preferences is a collection of Group Policy client-side extensions that deliver preference settings to domain-joined computers running Microsoft Windows desktop and server operating systems. Preference settings are administrative configuration choices deployed to desktops and servers. Preference settings differ from policy settings because users have a choice to alter the administrative configuration. Policy settings administratively enforce setting, which restricts user choice.
 - to decrypt it i need to use gpp-decrypt to decrypt
+
 ```
 gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ
 ```
