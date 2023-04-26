@@ -11,6 +11,7 @@ image: /assets/img/HTB/easy/Active/Active.png
 mkdir -p nmaps && rustscan -a $IP --ulimit 5000 -- -vvv -Pn -sC -sV -oN nmaps/nmap_rustscansimple.txt
 ```
 - Output
+
 ```
 PORT      STATE SERVICE       REASON  VERSION
 53/tcp    open  domain        syn-ack Microsoft DNS 6.1.7601 (1DB15D39) (Windows Server 2008 R2 SP1)
