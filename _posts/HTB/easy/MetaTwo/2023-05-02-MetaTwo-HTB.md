@@ -3,7 +3,7 @@ layout: post
 title: "MetaTwo"
 date: 2023-05-02
 categories: [HTB, machine-easy-htb]
-image: /assets/img/HTB/easy/MetaTwo.png
+image: /assets/img/HTB/easy/MetaTwo/MetaTwo.png
 ---
 > MetaTwo Machine involves hacking wordpress by exploit vulnerable wordpress plugin called bookingpress with unathenticated sql injection and with it, you can login with user into wordpress but that user is not an admin and in media section after login, there is library with an issue to parse XML file and with it having an issue, i can do XML injection by reading files of servers and with read one of file, i got access to ftp server and login with it and got credentials of ssh to user called jnelson.Inside the server, there is program that was running before called passpie in which it save credentials in different form and After cracking credentials found,i got login as root
 
