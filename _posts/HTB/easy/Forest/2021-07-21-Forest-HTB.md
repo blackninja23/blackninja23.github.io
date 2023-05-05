@@ -9,9 +9,11 @@ image: /assets/img/HTB/easy/Forest/Forest.png
 
 # Enumeration
 - Starting by scanning for ports
+
 ```
 mkdir -p nmaps && rustscan -a $IP --ulimit 5000 -- -vvv -Pn -sC -sV -oN nmaps/nmap_rustscansimple.txt
 ```
+
 ```
 PORT      STATE SERVICE      REASON  VERSION
 53/tcp    open  domain       syn-ack Simple DNS Plus
