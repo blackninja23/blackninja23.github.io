@@ -88,7 +88,7 @@ crackmapexec smb $IP -u 'guest' -p '' --shares
 ```
 
 ![](/assets/img/HTB/easy/Blackfield/cme.png)
-- i can see two folders which IPC$ and 
+- i can see two folders which IPC$ and profiles$
 - let start with profiles
 
 ```
