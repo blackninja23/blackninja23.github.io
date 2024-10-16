@@ -1058,7 +1058,7 @@ Teresa.Bell
 Caroline.Robinson
 ```
 - Interesting thing from user Teresa
-![[/assets/img/VL/interested1.png]]
+![/assets/img/VL/interested1.png]
 # FOOTHOLD
 - Since we found password from description of user 'Teresa' then we will do Password spray attack on all users
 ```
@@ -1230,6 +1230,6 @@ Mode                 LastWriteTime         Length Name
 
 *Evil-WinRM* PS C:\Users\Administrator\Desktop> type root.txt
 ```
-![[/assets/img/VL/compromised.png]]
+![/assets/img/VL/compromised.png]
 
-![[/assets/img/VL/achieved.png]]
+![/assets/img/VL/achieved.png]
