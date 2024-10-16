@@ -145,6 +145,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 - Access via login can be found - 445, 3389, 5985, 88
 - They might be web server or not -  5357,5985, 49674, 593
 - Dns Server - 53
+
 **Methodologies**:
 - As always start with **hanging fruits** before diving deep into enumeration
 - Hanging fruits are as follows 445, 139/135, 389/3268, 88, web servers
@@ -206,28 +207,13 @@ ldapsearch -x -H ldap://10.10.65.1:389/ -s base namingcontexts
 ```
 Output
 ```
-# extended LDIF
-#
-# LDAPv3
-# base <> (default) with scope baseObject
-# filter: (objectclass=*)
-# requesting: namingcontexts 
-#
-
-#
-dn:
+[REDACTED]
 namingcontexts: DC=baby,DC=vl
 namingcontexts: CN=Configuration,DC=baby,DC=vl
 namingcontexts: CN=Schema,CN=Configuration,DC=baby,DC=vl
 namingcontexts: DC=DomainDnsZones,DC=baby,DC=vl
 namingcontexts: DC=ForestDnsZones,DC=baby,DC=vl
-
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 2
-# numEntries: 1
+[REDACTED]
 ```
 - Anonymous access
 ```
