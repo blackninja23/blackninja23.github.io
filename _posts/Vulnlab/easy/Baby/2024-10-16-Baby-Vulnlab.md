@@ -186,13 +186,14 @@ Unable to connect with SMB1 -- no workgroup available
 Password for [WORKGROUP\guest]:
 session setup failed: NT_STATUS_ACCOUNT_DISABLED
 ```
-- Random user dont work
+
+- Random user dont work  
 ```
 └─$ smbclient -L 10.10.65.1 -U dsavdjsadksadcsa
 Password for [WORKGROUP\dsavdjsadksadcsa]:
 session setup failed: NT_STATUS_LOGON_FAILURE
-
 ```
+
 **NOTE:** Nothing on smb
 
 ## LDAP ENUMERATION
