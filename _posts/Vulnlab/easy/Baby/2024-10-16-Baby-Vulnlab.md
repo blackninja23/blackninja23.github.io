@@ -151,13 +151,6 @@ Service detection performed. Please report any incorrect results at https://nmap
 - Hanging fruits are as follows 445, 139/135, 389/3268, 88, web servers
 
 ## SMB ENUMERATION
-- **Methodologies** to use when enumerate smb
-```
-Technologies used
-Anonymous access
-Guest access 
-Random user access
-```
 - Operating System (nxc smb 4ip)
 ```
 Windows Server 2022 Build 20348 x64
@@ -197,11 +190,6 @@ session setup failed: NT_STATUS_LOGON_FAILURE
 **NOTE:** Nothing on smb
 
 ## LDAP ENUMERATION
-- **Methodologies** used when enumerate ldap
-```
-Base enumeration
-Anonymous ldap acecss
-```
 - Base Enumeration
 ```
 ldapsearch -x -H ldap://10.10.65.1:389/ -s base namingcontexts
