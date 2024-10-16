@@ -1058,6 +1058,7 @@ Teresa.Bell
 Caroline.Robinson
 ```
 - Interesting thing from user Teresa
+  
 ![](/assets/img/VL/interested1.png)
 # FOOTHOLD
 - Since we found password from description of user 'Teresa' then we will do Password spray attack on all users
